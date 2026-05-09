@@ -1,0 +1,30 @@
+# ai_src - Agente de documentos com memória
+# Dependências principais
+
+# LangChain (RAG, chains, loaders)
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langchain-chroma>=0.1.0
+langchain-huggingface>=0.1.0
+langchain-openai>=0.2.0
+langchain-ollama>=0.2.0
+langchain-text-splitters>=0.3.0
+
+# Base vetorial (Chroma usa internamente)
+chromadb>=0.4.0
+
+# Embeddings locais (HuggingFace usa sentence-transformers)
+sentence-transformers>=2.2.0
+
+# Extração de documentos
+pypdf>=3.0.0
+pdfplumber>=0.10.0
+openpyxl>=3.1.0
+python-docx>=1.0.0
+
+# LLM
+openai>=1.0.0
+
+# Utilitários
+python-dotenv>=1.0.0

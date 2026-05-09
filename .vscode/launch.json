@@ -1,0 +1,79 @@
+{
+    // BEGIN: preLaunchTask "Ensure Ollama" nos debugs que usam LLM (ask + main). Remova preLaunchTask se usar só OpenAI.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug: ask (pergunta)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/ai_src/main.py",
+            "args": ["ask", "Qual é a função do conselho deliberativo?"],
+            "cwd": "${workspaceFolder}/ai_src",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "preLaunchTask": "Ensure Ollama"
+        },
+        {
+            "name": "Debug: ask (LangChain)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/ai_src/main.py",
+            "args": ["ask", "O Diretor Tesoureiro tem quais atribuições? Os balancetes são de sua responsabilidade?", "--langchain"],
+            "cwd": "${workspaceFolder}/ai_src",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "preLaunchTask": "Ensure Ollama"
+        },
+        {
+            "name": "Debug: ingest (adicionar documento)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/ai_src/main.py",
+            "args": ["ingest", "${workspaceFolder}/BACKUP DO ESTATUTO SOCIAL.pdf"],
+            "cwd": "${workspaceFolder}/ai_src",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Debug: ingest (LangChain)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/ai_src/main.py",
+            "args": ["ingest", "${workspaceFolder}/BACKUP DO ESTATUTO SOCIAL.pdf", "--langchain"],
+            "cwd": "${workspaceFolder}/ai_src",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Debug: ingest --replace",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/ai_src/main.py",
+            "args": ["ingest", "${workspaceFolder}/arquivo.xlsx", "--replace"],
+            "cwd": "${workspaceFolder}/ai_src",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Debug: clear",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/ai_src/main.py",
+            "args": ["clear"],
+            "cwd": "${workspaceFolder}/ai_src",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Debug: main.py (editar args)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/ai_src/main.py",
+            "args": [],
+            "cwd": "${workspaceFolder}/ai_src",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "preLaunchTask": "Ensure Ollama"
+        }
+    ]
+} // END: preLaunchTask Ensure Ollama

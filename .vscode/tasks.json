@@ -1,0 +1,27 @@
+{
+    // BEGIN: Task para subir/garantir Ollama antes dos debugs (preLaunchTask)
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Ensure Ollama",
+            "type": "shell",
+            "command": "echo Defina windows/linux/osx em tasks.json para Ensure Ollama",
+            "windows": {
+                "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"${workspaceFolder}\\.vscode\\ensure-ollama.ps1\""
+            },
+            "linux": {
+                "command": "bash \"${workspaceFolder}/.vscode/ensure-ollama.sh\""
+            },
+            "osx": {
+                "command": "bash \"${workspaceFolder}/.vscode/ensure-ollama.sh\""
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared",
+                "showReuseMessage": false,
+                "close": true
+            }
+        }
+    ]
+} // END: Task Ensure Ollama (preLaunchTask)
